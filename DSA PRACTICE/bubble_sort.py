@@ -57,7 +57,7 @@ print(bubble_sort(list))
 
 def bubble_sort(list):
     n=len(list)
-    count=0
+   
     #traverse through all list elements
     for i in range(0,n):
         swapped=False
