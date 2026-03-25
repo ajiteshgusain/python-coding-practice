@@ -9,11 +9,13 @@ def insertion_sort(list):
             list[j+1]=list[j]
             j=j-1
 
-            print(list)
+            # print(list)
         else:
             list[j+1]=key
-            print(f"insertion{key} in list")
-            print(list)
+            # print(f"insertion{key} in list")
+            # print(list)
+
+        break
 
 
     return list
