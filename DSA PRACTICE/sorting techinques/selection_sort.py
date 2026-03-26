@@ -15,5 +15,8 @@ def selection_sort(arr):
             arr[i],arr[min_index]=arr[min_index],arr[i]
 # swapping the smallest we found with the first 
 # unsorted position 
-        return arr
 
+        return arr
+    
+list=[13,5,5,3,1,2]
+print(selection_sort(list))
