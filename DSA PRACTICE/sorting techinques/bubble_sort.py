@@ -11,7 +11,7 @@
 # list=[15,6,13,22,3,52,2]
 
 # def bubble_sort(list):
-#     n=len(list)
+#     n=len(list) 
 #     Pass=0
     
 #     #traverse through all list elements
