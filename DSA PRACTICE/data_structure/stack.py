@@ -1,5 +1,5 @@
 #stack without using oop
-list1=[12]
+list1=[]
 
 def list_pop(list1):
     if   is_empty(list1):
@@ -58,9 +58,44 @@ def seek(list1):
     
     return f"your list :{list1}"
 
+
+
 length=int(input("enter the length of the list:"))
-print(list_pop(list1))
-print(list_pop(list1))
+while True:
+    print("1. to pop ")
+    print("2. to push")
+    print("3. to seek")
+    print("4. to peek")
+    
+
+    choice=int(input("enter your choice:"))
+
+    try:
+        
+        if choice==1:
+            list_pop(list1)
+            
+            
+        elif choice==2:
+
+            push_list(list1)
+
+        elif choice==3:
+            seek(list1)
+
+        if choice==4:
+            peek(list1)
+
+    except Exception as e:
+        print("some error occured")
+
+    finally:
+        print("thank you")
+
+    break
+
+
+    
 
 
 
