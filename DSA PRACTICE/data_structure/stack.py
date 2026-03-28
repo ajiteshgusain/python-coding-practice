@@ -23,7 +23,7 @@ def is_empty(list1):
     # False
     ##========================================================
     # a more simplified version 
-    #return len(list1)==0 #it will return true if list empty and false if not
+    return len(list1)==0 #it will return true if list empty and false if not
 
     # a more professional version
     #will be as we know a empty list is considered as  false then we use
