@@ -1,101 +1,206 @@
-#stack without using oop
-list1=[]
+# #stack without using oop
+# list1=[]
 
-def list_pop(list1):
-    if   is_empty(list1):
-        return f"list is empty underflow"
+# def list_pop(list1):
+#     if   is_empty(list1):
+#         return f"list is empty underflow"
     
        
 
-    popped_element=list1.pop()
+#     popped_element=list1.pop()
     
-    return f"popped element :{popped_element},you new list: {list1}"
+#     return f"popped element :{popped_element},you new list: {list1}"
 
 
 
-def is_empty(list1):
+# def is_empty(list1):
     
-    #normal 
-    # #=========================
-    # this python statement works like this agar list ki len =0 hai means true
-    # if len(list1)==0:
-    #     return True
+#     #normal 
+#     # #=========================
+#     # this python statement works like this agar list ki len =0 hai means true
+#     # if len(list1)==0:
+#     #     return True
     
-    # False
-    ##========================================================
-    # a more simplified version 
-    return len(list1)==0 #it will return true if list empty and false if not
+#     # False
+#     ##========================================================
+#     # a more simplified version 
+#     return len(list1)==0 #it will return true if list empty and false if not
 
-    # a more professional version
-    #will be as we know a empty list is considered as  false then we use
-    #return not list1
-def push_list(list1):
-    if is_full(list1):
-        return f" list is full overflow!!"
+#     # a more professional version
+#     #will be as we know a empty list is considered as  false then we use
+#     #return not list1
+# def push_list(list1):
+#     if is_full(list1):
+#         return f" list is full overflow!!"
     
-    element=input("enter the elements for the list:")
-    list1.append(element)
+#     element=input("enter the elements for the list:")
+#     list1.append(element)
 
-    return f"new list after appending the elements :{list1}"
-
-
-def peek(list1):
-    if is_empty(list1):
-        return f"sorry but list is empty!!! "
-    return f"peeked element:{list1[-1]}"
+#     return f"new list after appending the elements :{list1}"
 
 
+# def peek(list1):
+#     if is_empty(list1):
+#         return f"sorry but list is empty!!! "
+#     return f"peeked element:{list1[-1]}"
 
-def is_full(list1):
-    if len(list1)>length:
-        return True
+
+
+# def is_full(list1):
+#     if len(list1)==length:
+#         return True
     
-    False
+#     return False
 
-def seek(list1):
-    if is_empty(list1):
-        return f"list is empty!!"
+# def seek(list1):
+#     if is_empty(list1):
+#         return f"list is empty!!"
     
-    return f"your list :{list1}"
+#     return f"your list :{list1}"
 
 
 
-length=int(input("enter the length of the list:"))
-while True:
-    print("1. to pop ")
-    print("2. to push")
-    print("3. to seek")
-    print("4. to peek")
+# length=int(input("enter the length of the list:"))
+# while True:
+#     print("1. to pop ")
+#     print("2. to push")
+#     print("3. to seek")
+#     print("4. to peek")
+#     print("5. to exit")
     
 
-    choice=int(input("enter your choice:"))
+#     choice=int(input("enter your choice:"))
 
-    try:
+#     try:
         
-        if choice==1:
-            list_pop(list1)
+#         if choice==1:
+#             print(list_pop(list1))
             
             
-        elif choice==2:
+#         elif choice==2:
 
-            push_list(list1)
+#             print(push_list(list1))
 
-        elif choice==3:
-            seek(list1)
+#         elif choice==3:
+#             print(seek(list1))
 
-        if choice==4:
-            peek(list1)
+#         elif choice==4:
+#             print(peek(list1))
 
-    except Exception as e:
-        print("some error occured")
+#         elif choice==5:
+#             break
 
-    finally:
-        print("thank you")
+#     except Exception as e:
+#         print(print("some error occured"))
 
-    break
-
+#     finally:
+#         print("thank you")
 
     
 
+#=========================================================================
+#stack using class
+
+# class stack:
+  
+# # 1. The Setup (Constructor)
+#     def __init__(self, limit):
+#         self.container = []   # This is our internal list
+#         self.limit = limit     # The maximum size allowed
 
 
+
+#     def is_empty(self):
+#         return not self.container
+    
+
+    
+#     def is_full(self):
+#         if len(self.container)==self.limit:
+#             return True
+    
+#         return False
+    
+
+#     def list_pop(self):
+#         if   self.is_empty():
+#             return f"list is empty underflow"
+#         return f"popped element :{self.container.pop()},you new list: {self.container}"
+    
+
+#     def push_list(self,element):
+        
+#         if self.is_full():
+#             return f" list is full overflow!!"
+    
+#         element=input("enter the elements for the list:")
+#         self.container.append(element)
+
+#         return f"new list after appending the elements :{self.container}"
+
+
+#     def peek(self):
+#         if self.is_empty():
+#             return f"sorry but list is empty!!! "
+#         return f"peeked element:{self.container[-1]}"
+
+
+
+
+#     def seek(self):
+#         if self.is_empty():
+#             return f"list is empty!!"
+        
+#         return f"your list :{self.container}."
+
+
+
+# limit=int(input("enter the length of the list:"))
+
+# stack1=stack(limit)
+# while True:
+#     print("1. to pop ")
+#     print("2. to push")
+#     print("3. to seek")
+#     print("4. to peek")
+#     print("5. to exit")
+    
+
+#     choice=int(input("enter your choice:"))
+
+#     try:
+        
+#         if choice==1:
+#             print(stack1.list_pop())
+            
+            
+#         elif choice==2:
+
+#             print(stack1.push_list())
+
+#         elif choice==3:
+#             print(stack1.seek())
+
+#         elif choice==4:
+#             print(stack1.peek())
+
+#         elif choice==5:
+#             break
+
+#     except Exception as e:
+#         print(print("some error occured"))
+
+#     finally:
+#         print("thank you")
+
+
+class acs:
+    def __init__(self,name):
+        self.name=name
+
+    def type(self):
+        return self.name
+
+
+x=acs("acdc")
+print(x.name())
