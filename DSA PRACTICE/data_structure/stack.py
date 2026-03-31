@@ -101,106 +101,106 @@
 #=========================================================================
 #stack using class
 
-# class stack:
+class stack:
   
-# # 1. The Setup (Constructor)
-#     def __init__(self, limit):
-#         self.container = []   # This is our internal list
-#         self.limit = limit     # The maximum size allowed
+# 1. The Setup (Constructor)
+    def __init__(self, limit):
+        self.container = []   # This is our internal list
+        self.limit = limit     # The maximum size allowed
 
 
 
-#     def is_empty(self):
-#         return not self.container
+    def is_empty(self):
+        return not self.container
     
 
     
-#     def is_full(self):
-#         if len(self.container)==self.limit:
-#             return True
+    def is_full(self):
+        if len(self.container)==self.limit:
+            return True
     
-#         return False
-    
-
-#     def list_pop(self):
-#         if   self.is_empty():
-#             return f"list is empty underflow"
-#         return f"popped element :{self.container.pop()},you new list: {self.container}"
+        return False
     
 
-#     def push_list(self,element):
+    def list_pop(self):
+        if   self.is_empty():
+            return f"list is empty underflow"
+        return f"popped element :{self.container.pop()},you new list: {self.container}"
+    
+
+    def push_list(self,element):
         
-#         if self.is_full():
-#             return f" list is full overflow!!"
+        if self.is_full():
+            return f" list is full overflow!!"
     
-#         element=input("enter the elements for the list:")
-#         self.container.append(element)
+        element=input("enter the elements for the list:")
+        self.container.append(element)
 
-#         return f"new list after appending the elements :{self.container}"
-
-
-#     def peek(self):
-#         if self.is_empty():
-#             return f"sorry but list is empty!!! "
-#         return f"peeked element:{self.container[-1]}"
+        return f"new list after appending the elements :{self.container}"
 
 
+    def peek(self):
+        if self.is_empty():
+            return f"sorry but list is empty!!! "
+        return f"peeked element:{self.container[-1]}"
 
 
-#     def seek(self):
-#         if self.is_empty():
-#             return f"list is empty!!"
+
+
+    def seek(self):
+        if self.is_empty():
+            return f"list is empty!!"
         
-#         return f"your list :{self.container}."
+        return f"your list :{self.container}."
 
 
 
-# limit=int(input("enter the length of the list:"))
+limit=int(input("enter the length of the list:"))
 
-# stack1=stack(limit)
-# while True:
-#     print("1. to pop ")
-#     print("2. to push")
-#     print("3. to seek")
-#     print("4. to peek")
-#     print("5. to exit")
+stack1=stack(limit)
+while True:
+    print("1. to pop ")
+    print("2. to push")
+    print("3. to seek")
+    print("4. to peek")
+    print("5. to exit")
     
 
-#     choice=int(input("enter your choice:"))
+    choice=int(input("enter your choice:"))
 
-#     try:
+    try:
         
-#         if choice==1:
-#             print(stack1.list_pop())
+        if choice==1:
+            print(stack1.list_pop())
             
             
-#         elif choice==2:
+        elif choice==2:
 
-#             print(stack1.push_list())
+            print(stack1.push_list())
 
-#         elif choice==3:
-#             print(stack1.seek())
+        elif choice==3:
+            print(stack1.seek())
 
-#         elif choice==4:
-#             print(stack1.peek())
+        elif choice==4:
+            print(stack1.peek())
 
-#         elif choice==5:
-#             break
+        elif choice==5:
+            break
 
-#     except Exception as e:
-#         print(print("some error occured"))
+    except Exception as e:
+        print(print("some error occured"))
 
-#     finally:
-#         print("thank you")
-
-
-class acs:
-    def __init__(self,name):
-        self.name=name
-
-    def type(self):
-        return self.name
+    finally:
+        print("thank you")
 
 
-x=acs("acdc")
-print(x.name())
+# class acs:
+#     def __init__(self,name):
+#         self.name=name
+
+#     def type(self):
+#         return self.name
+
+
+# x=acs("acdc")
+# print(x.type())
