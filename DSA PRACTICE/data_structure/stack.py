@@ -152,64 +152,44 @@ class stack:
             return f"list is empty!!"
         
         return f"your list :{self.container}."
-
-
-
-limit=int(input("enter the length of the list:"))
-
-stack1=stack(limit)
-while True:
-    print("1. to pop ")
-    print("2. to push")
-    print("3. to seek")
-    print("4. to peek")
-    print("5. to exit")
     
+    def __str__(self):
+        return f"Stack: {self.container}"
 
-    choice=int(input("enter your choice:"))
+# 2. THE IGNITION SWITCH (Always at the bottom)
+if __name__ == "__main__":
+    # This code only runs if you run THIS file directly.
+    # It won't run if you "import" this file elsewhere.
+    limit=int(input("enter the length of the list:"))
 
-    try:
+    my_stack=stack(limit)
+
+# 2. Interaction Phase
+    while True:
+        print("\n--- MENU ---")
+        print("1. Push | 2. Pop | 3. Display Stack | 4. Exit")
         
-        if choice==1:
-            print(stack1.list_pop())
+        try:
+            choice = int(input("Enter choice: "))
+
+            if choice == 1:
+                val = input("Enter value to push: ")
+                print(my_stack.push(val))
             
+            elif choice == 2:
+                print(my_stack.pop())
             
-        elif choice==2:
-            element=input("enter the elements for the list:")
-      
+            elif choice == 3:
+                # This uses the __str__ method we wrote above!
+                print(my_stack) 
+            
+            elif choice == 4:
+                print("Exiting... goodbye!")
+                break
+            else:
+                print("Invalid choice!")
 
-            print(stack1.push_list(element))
-
-        elif choice==3:
-            print(stack1.seek())
-
-        elif choice==4:
-            print(stack1.peek())
-
-        elif choice==5:
-            break
-
-    except Exception as e:
-        print(print("some error occured"))
-
-    finally:
-        print("thank you")
-
-
-
-
-
-
-
-
-
-# class acs:
-#     def __init__(self,name):
-#         self.name=name
-
-#     def type(self):
-#         return self.name
-
-
-# x=acs("acdc")
-# print(x.type())
+        except ValueError:
+            print("Please enter a valid number.")
+        finally:
+            print("Action processed.")
