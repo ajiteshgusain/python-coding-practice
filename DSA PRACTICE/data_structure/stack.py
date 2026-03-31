@@ -132,9 +132,9 @@ class stack:
         
         if self.is_full():
             return f" list is full overflow!!"
-    
-        element=input("enter the elements for the list:")
+        
         self.container.append(element)
+
 
         return f"new list after appending the elements :{self.container}"
 
@@ -175,8 +175,10 @@ while True:
             
             
         elif choice==2:
+            element=input("enter the elements for the list:")
+      
 
-            print(stack1.push_list())
+            print(stack1.push_list(element))
 
         elif choice==3:
             print(stack1.seek())
@@ -192,6 +194,13 @@ while True:
 
     finally:
         print("thank you")
+
+
+
+
+
+
+
 
 
 # class acs:
