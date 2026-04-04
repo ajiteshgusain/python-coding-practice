@@ -11,7 +11,7 @@ def insertion_sort(list):
 
             # print(list)
         else:
-            list[j+1]=key
+            list[j+1]=ke
             # print(f"insertion{key} in list")
             # print(list)
 
