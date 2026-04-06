@@ -38,6 +38,6 @@ def selection_sort(arr):
 
         
 
-arr=[64,25,12,22,11]
+arr=[64,85,12,22,11]
 
 print(selection_sort(arr))
