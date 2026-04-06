@@ -30,6 +30,7 @@ def selection_sort(arr):
             # Key Insight: Even if we looked at 1,000 numbers, we only perform one swap 
             # at the very end of the pass.
         arr[i],arr[position]=arr[position],arr[i]
+        print(arr)
 
 
     return arr
