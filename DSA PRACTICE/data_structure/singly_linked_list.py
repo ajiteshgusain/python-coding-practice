@@ -80,46 +80,59 @@ class Node:
         self.data=data
         self.next=None
         #This stores the "address" of the next node. 
+ 
+#  a linked list is a continuous array means
+# the nodes formed are assigned address randomly
+
                           # It starts as None (empty) because there's no next node yet.
 
+# in likd
+# creating nodes
+node1=Node(10) #node appearence->[10|None]address let 1000
+node2=Node(20) #node appearence->[20|None] adrress 20000
+# connecting the nodes
+
+node1.next=node2
+
+
         
-class Linkedlist:
-    def __init__(self):
-        #When we first create a list, it's empty, so head is None.
-        self.head=None
+# class Linkedlist:
+#     def __init__(self):
+#         #When we first create a list, it's empty, so head is None.
+#         self.head=None
 
-    #insertion at the beginning
-    def insert_at_beginning(self, new_data):
-        #create a new node with the data
-        new_node=Node(new_data)
-        # 2. Make the 'next' of this new node point to the current head
+#     #insertion at the beginning
+#     def insert_at_beginning(self, new_data):
+#         #create a new node with the data
+#         new_node=Node(new_data)
+#         # 2. Make the 'next' of this new node point to the current head
 
-        new_node.next = self.head
-        # 3. Move the head to point to this new node
-        self.head=new_node
+#         new_node.next = self.head
+#         # 3. Move the head to point to this new node
+#         self.head=new_node
 
 
-    #deletion 
+#     #deletion 
 
-    def delete_node(self,key):
-        # start at the begining
-        temp=self.head
-        # CASE 1: If the head itself needs to be deleted
-        if temp is not None:
-            if temp.data==key:
-                self.head= temp.next# Just move the head to the second node
-                temp=None #delete the old head from memory
-                return
+#     def delete_node(self,key):
+#         # start at the begining
+#         temp=self.head
+#         # CASE 1: If the head itself needs to be deleted
+#         if temp is not None:
+#             if temp.data==key:
+#                 self.head= temp.next# Just move the head to the second node
+#                 temp=None #delete the old head from memory
+#                 return
             
 
-        #case 2: search for the key while track of the "previous" node
+#         #case 2: search for the key while track of the "previous" node
 
-        prev=None
-        while temp is not None:
-            if temp.data==key:
-                break
+#         prev=None
+#         while temp is not None:
+#             if temp.data==key:
+#                 break
 
-            prev=temptemp
+#             prev=temptemp
 
 
 
