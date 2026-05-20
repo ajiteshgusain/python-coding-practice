@@ -37,3 +37,15 @@ class MinHeap:
         if smallest != index:
             self.heap[index], self.heap[smallest] = self.heap[smallest], self.heap[index]
             self._bubble_down(smallest)
+
+
+
+
+class Node:
+    def __init__(self, key):
+        self.value = key  
+        self.left = None  
+        self.right = None    
+
+# Creating the root node
+root = Node(5)
