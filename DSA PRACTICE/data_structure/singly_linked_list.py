@@ -59,3 +59,67 @@ class Linked_list:# manager of our list
             print(current.data,end="->")
             current=current.next
         print ("None")
+
+
+
+    def search(self,target):
+        current=self.head
+        # Step 1: Put your finger on the first box
+    
+    # Step 2: Keep walking as long as your finger is on an actual box
+        while current is not None:
+            if current.data==target:# Step 3: Check inside the box
+                return True # Found it! Stop everything and celebrate.
+            
+            current= current.next# Step 4: Follow the arrow to the next box
+
+        #we get noting the target element is not in our list
+        return False
+    
+
+# here we use two pointer technique
+#current: The leading finger that checks if this is the box we want to delete.
+#prev (Previous): A trailing finger that stays exactly one box behind current.
+    def deletion(self,key):
+        current=self.head
+        prev=None
+# Case A: What if the very FIRST box 
+# (the Head) is the one to delete?
+
+        if current is not None and current.data==key:
+# Move the head pointer to the second box
+            self.head=current.next
+
+# Free the old head box from memory
+            current=None
+            return
+
+# Case B: Walk the chain to find the key 
+        while current is not None and current.data !=key:
+     # Move 'prev' to where 'current' is standing       
+            prev=current
+
+# Slide 'current' forward to the next box
+            current = current.next
+
+# Case C: What if the key wasn't even in our list?
+        if current is None:
+            print ("value  not found i the list !!!")
+
+            return
+
+# Case D: We found it! Unlink the node from the chain
+        prev.next=current.next # Bypass 'current' completely!
+# Erase the deleted node from memory
+        current =None
+
+#very important 
+
+# 4. Unlinking the Chain
+# prev.next = current.next
+
+# Let’s translate that line: "Take the arrow coming out of the box prev is holding (10), and change it to point to whatever is next after current (30)."
+
+# 10 now points directly to 30. The box 20 is isolated!
+
+# current = None wipes our temporary pointer away, completing the bypass operation.
