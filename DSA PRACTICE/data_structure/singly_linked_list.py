@@ -95,6 +95,9 @@ class Linked_list:# manager of our list
             return
 
 # Case B: Walk the chain to find the key 
+# So, the phrase "Is current standing on a real box?" means the loop safely verifies: "Hey, is my finger actually pointing to a real,
+# valid box right now? If it is pointing to None, I need to s
+# top immediately so I don't crash the program."
         while current is not None and current.data !=key:
      # Move 'prev' to where 'current' is standing       
             prev=current
