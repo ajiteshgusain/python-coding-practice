@@ -129,13 +129,7 @@ class stack:
     
 
     def push_list(self,element):
-        
-        if self.is_full():
-            return f" list is full overflow!!"
-        
         self.container.append(element)
-
-
         return f"new list after appending the elements :{self.container}"
 
 
@@ -173,8 +167,12 @@ if __name__ == "__main__":
             choice = int(input("Enter choice: "))
 
             if choice == 1:
-                val = input("Enter value to push: ")
-                print(my_stack.push_list(val))
+                if my_stack.is_full():
+                    print(f" list is full overflow!!")
+                
+                else:
+                    val = input("Enter value to push: ")
+                    print(my_stack.push_list(val))
             
             elif choice == 2:
                 print(my_stack.list_pop())
