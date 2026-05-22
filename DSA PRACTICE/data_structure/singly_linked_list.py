@@ -116,6 +116,19 @@ class Linked_list:# manager of our list
 # Erase the deleted node from memory
         current =None
 
+
+    def insert_at_position(self,position,data):
+
+        new_node=Node(data)
+        if position==0:
+            #Make new box point to the old first box
+            new_node.next=self.head
+
+            self.head=new_node
+            return f"Successfully added {data} at index{position}. "
+        current=s
+            
+
 #very important 
 
 # 4. Unlinking the Chain
@@ -126,3 +139,18 @@ class Linked_list:# manager of our list
 # 10 now points directly to 30. The box 20 is isolated!
 
 # current = None wipes our temporary pointer away, completing the bypass operation.
+
+
+
+
+
+
+
+# 🛠️ The Three Scenarios
+# When inserting by a position number (index), your code has to handle three possibilities:
+
+# Index 0 (The Front): The list isn't empty, but you want to make this new box the very first item.
+
+# Index in the Middle: You want to insert it somewhere between two existing boxes.
+
+# Index out of bounds: The user asks to insert at index 100, but your list only has 3 boxes!
