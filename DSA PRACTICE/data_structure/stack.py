@@ -174,10 +174,10 @@ if __name__ == "__main__":
 
             if choice == 1:
                 val = input("Enter value to push: ")
-                print(my_stack.push(val))
+                print(my_stack.push_list(val))
             
             elif choice == 2:
-                print(my_stack.pop())
+                print(my_stack.list_pop())
             
             elif choice == 3:
                 # This uses the __str__ method we wrote above!
