@@ -80,3 +80,5 @@
 # arr=[5,2,3,8]
 # sorted_array=Sorter(arr)
 # print(sorted_array.Selection_Sort())
+
+# now optimized bubble sort .
