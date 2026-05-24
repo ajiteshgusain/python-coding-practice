@@ -178,11 +178,13 @@
 #         except Exception as e:
 #             print(f"An unexpected error occurred: {e}")
 #         finally:
-#             print("Action processed.")
+#             print("Action processd.")
 
 
 
 #queue using  pointer concept (not using inbuilt python functions like pop(),push()) doing
-#it like it is done in c++  assuming list as static array.
+#it like it is done in c++  assuming list as static array
  
+
+
 
