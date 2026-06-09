@@ -1,36 +1,47 @@
-import turtle
+import time
+import os
+import random
 
-# Setup the screen
-screen = turtle.Screen()
-screen.bgcolor("black")
+def create_grid(rows, cols):
+    """Generates a random starting grid of alive (1) and dead (0) cells."""
+    return [[random.choice([0, 1]) for _ in range(cols)] for _ in range(rows)]
 
-# Create the turtle
-wheel = turtle.Turtle()
-wheel.speed(0)  # Fastest speed
-wheel.width(2)
+def print_grid(grid):
+    """Renders the grid cleanly in the terminal using visual anchors."""
+    os('cls' if os.name == 'nt' else 'clear')
+    for row in grid:
+        print("".join("█" if cell else " " for cell in row))
 
-# Define colors for the pattern
-colors = ["#FFD700", "#DAA520", "#B8860B"] # Shades of gold/yellow
+def get_neighbors(grid, r, c, rows, cols):
+    """Counts the 8 surrounding active cells using a toroidal (wrapping) grid."""
+    count = 0
+    for i in [-1, 0, 1]:
+        for j in [-1, 0, 1]:
+            if i == 0 and j == 0:
+                continue
+            # The modulo % operator forces coordinates to wrap around boundaries
+            count += grid[(r + i) % rows][c + j % cols]
+    return count
 
-def draw_petal(t, size):
-    """Draws a single petal shape."""
-    t.color("gold")
-    t.begin_fill()
-    t.circle(size, 60)  # Draw arc
-    t.left(120)         # Turn to close the shape
-    t.circle(size, 60)  # Draw arc
-    t.left(120)         # Turn to close the shape
-    t.end_fill()
+def update_grid(grid, rows, cols):
+    """Applies Conway's rules to calculate the next step of evolution."""
+    new_grid = [[0] * cols for _ in range(rows)]
+    for r in range(rows):
+        for c in range(cols):
+            neighbors = get_neighbors(grid, r, c, rows, cols)
+            if grid[r][c] == 1 and neighbors in [2, 3]:
+                new_grid[r][c] = 1  # Survival
+            elif grid[r][c] == 0 and neighbors == 3:
+                new_grid[r][c] = 1  # Birth
+    return new_grid
 
-# Draw the pattern
-for i in range(12):  # Creating 12 spokes
-    wheel.penup()
-    wheel.goto(0, 0)
-    wheel.pendown()
-    wheel.right(i * 30)  # Rotate 30 degrees each time (360/12 = 30)
-    wheel.forward(50)    # Move away from center
-    draw_petal(wheel, 60)
+def run_simulation(rows=20, cols=40, generations=50):
+    """Runs the main infinite loop of life."""
+    grid = create_grid(rows, cols)
+    for _ in range(generations):
+        print_grid(grid)
+        grid = update_grid(grid, rows, cols)
+        time.sleep(0.1)
 
-# Hide the turtle and keep the window open
-wheel.hideturtle()
-turtle.done()
+if __name__ == "__main__":
+    run_simulation()
