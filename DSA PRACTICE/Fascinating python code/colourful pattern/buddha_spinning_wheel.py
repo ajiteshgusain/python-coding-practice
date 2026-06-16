@@ -19,7 +19,7 @@ for i in range(400):
     
     # Weird math: glitchy angles create a false 3D tunnel
     t.forward(i * 2)
-    t.right(119)  # An off-center angle forces a chaotic spiral
+    t.right(137.5)  # An off-center angle forces a chaotic spiral
     t.forward(i)
     t.right(91)   # Second angle creates the optical interference
 
