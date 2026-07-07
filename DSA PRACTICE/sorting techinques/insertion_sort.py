@@ -13,12 +13,7 @@
 #         else:
 #             list[j+1]=key
 #             # print(f"insertion{key} in list")
-#             # print(list)
 
-#         break
-
-
-#     return list
 
 
 
