@@ -4,18 +4,14 @@
 4. A version of this game is featured in the book "Invent Your Own
 5. Computer Games with Python" https://nostarch.com/inventwithpython
 6. Tags: short, game, puzzle"""
-7.
-8. import random
-9.
-Bagels 3
-10. NUM_DIGITS = 3 # (!) Try setting this to 1 or 10.
-11. MAX_GUESSES = 10 # (!) Try setting this to 1 or 100.
-12.
-13.
-14. def main():
-15. print('''Bagels, a deductive logic game.
-16. By Al Sweigart al@inventwithpython.com
-17.
+import random
+#Bagels 3
+NUM_DIGITS = 3 # (!) Try setting this to 1 or 10.
+MAX_GUESSES = 10 # (!) Try setting this to 1 or 100.
+
+def main():
+    print('''Bagels, a deductive logic game.
+
 18. I am thinking of a {}-digit number with no repeated digits.
 19. Try to guess what it is. Here are some clues:
 20. When I say: That means:
@@ -68,16 +64,15 @@ Bagels 3
 66. for i in range(NUM_DIGITS):
 67. secretNum += str(numbers[i])
 68. return secretNum
-69.
-70.
+
 71. def getClues(guess, secretNum):
 72. """Returns a string with the pico, fermi, bagels clues for a guess
 73. and secret number pair."""
 74. if guess == secretNum:
 75. return 'You got it!'
-76.
+
 77. clues = []
-78.
+
 79. for i in range(len(guess)):
 80. if guess[i] == secretNum[i]:
 81. # A correct digit is in the correct place.
