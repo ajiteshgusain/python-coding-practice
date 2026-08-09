@@ -1,2 +1,2 @@
-#quick sort
+#quick so
 
