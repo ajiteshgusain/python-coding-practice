@@ -1,9 +1,9 @@
-#size  of   my  robot's world
+#size  of   my  robot's worl
 
 ROWS=10
 COLS=10
 
-#Robot  position
+#Robot  positio
 robot_row=4
 robot_col=0
 
