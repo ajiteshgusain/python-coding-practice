@@ -1,4 +1,4 @@
-#size  of   my  robot's worl
+#size  of   my  rob o ts worl
 
 ROWS=10
 COLS=10
